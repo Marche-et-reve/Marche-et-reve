@@ -75,7 +75,7 @@ li, a, ol, ul, p {
 	font-family: "Arial";
 }
 
-footer {
+.footer {
 	text-align: center;
 	font-family: "Arial";
 	color: black;
@@ -129,22 +129,7 @@ img {
 	max-width : 60%;
 	max-height: 30%;
 }
-.pizza {
-	padding-top: 250px;
-	padding-left: 50px;
-	color: navy;
-	font-style: "bold";
-	font-family: "Arial";
-	font-size: 14px;
-}
 
-.pizz {
-	padding-left: 40px;
-	display: grid;
-	grid-template-columns: 350px 350px 350px;
-	grid-template-rows: 0px;
-  	gap: 15px;
-}
 
 img:hover {
 	display: flex;
