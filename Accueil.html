@@ -6,6 +6,15 @@
     <title> Marche et rêve </title>
     <!-- Feuille de style principale de la page d'accueil -->
     <link href="CSS/accueil.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@2.0.0-beta.5/dist/leaflet.css" />
+
+  <style>
+    /* 2. La carte doit avoir une hauteur définie */
+    #map {
+      width: 80%;
+      height: 80%;
+    }
+  </style>
 </head>
 <body> 
     <!-- En-tête de la page avec titre stylisé en ligne -->
@@ -31,10 +40,31 @@
             <div class="card">
                 <h1> Marche et rêve </h1>
                 <p> Association derandonnée pédestre de Savigny-sur-Orge, on organise des promenades pas trop loin dans l'Essonne. Le site est alimenté selon mes disponibilités et ma motivation, donc patience ! On se retrouve au parking de la mairie de Savigny-sur-Orge pour partir pas loin.  
-                <center><iframe style="width: 50%; height: 280px; border: 5px;" src="//umap.openstreetmap.fr/fr/map/marche-et-reve_1482707?scaleControl=false&miniMapControl=false&scrollWheelZoom=false&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true">
-               </iframe></center>
-                <p><a href="//umap.openstreetmap.fr/fr/map/marche-et-reve_1482707?scaleControl=false&miniMapControl=false&scrollWheelZoom=true&zoomControl=true&editMode=disabled&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&captionMenus=true"></a></p>
-                
+<div id="map"></div>
+
+  <!-- 3. Import map pour résoudre l'import 'leaflet' dans le navigateur -->
+  <script type="importmap">
+    {
+      "imports": {
+        "leaflet": "https://esm.sh/leaflet@2.0.0-beta.5"
+      }
+    }
+  </script>
+
+  <!-- 4. Votre script en mode module -->
+  <script type="module">
+    import { LeafletMap, TileLayer, Marker } from 'leaflet';
+
+    const map = new LeafletMap('map').setView([51.505, -0.159], 15);
+
+    new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    new Marker([51.504, -0.159]).addTo(map)
+      .bindPopup('A pretty CSS popup.<br>Easily customizable.')
+      .openPopup();
+  </script>
             </div> 
         </div>
 
