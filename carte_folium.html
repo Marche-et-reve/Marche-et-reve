@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c00b207e4dc500f1fc1dca9fe6cd7024 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c00b207e4dc500f1fc1dca9fe6cd7024" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c00b207e4dc500f1fc1dca9fe6cd7024 = L.map(
+                "map_c00b207e4dc500f1fc1dca9fe6cd7024",
+                {
+                    center: [48.679835, 2.345206],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 15,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6425a10d8e154a3772232ecbec185532 = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenTopoMap (CC-BY-SA), \u00a9 OpenStreetMap contributors",
+  "subdomains": [
+"a",
+"b",
+"c",
+],
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6425a10d8e154a3772232ecbec185532.addTo(map_c00b207e4dc500f1fc1dca9fe6cd7024);
+        
+    
+            var tile_layer_26d944a3fa21bf3f86fdae962b7d9674 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u00a9 Esri",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_26d944a3fa21bf3f86fdae962b7d9674.addTo(map_c00b207e4dc500f1fc1dca9fe6cd7024);
+        
+    
+            var tile_layer_240d5693ab032ccef0a4cdf7bad1d2ad = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "Tiles \u00a9 Esri \u2014 Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_240d5693ab032ccef0a4cdf7bad1d2ad.addTo(map_c00b207e4dc500f1fc1dca9fe6cd7024);
+        
+    
+            var tile_layer_05c9c7af08a254cdfd82fbfe9721277a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap France | \u00a9 \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap contributors\u003c/a\u003e",
+  "subdomains": [
+"a",
+"b",
+"c",
+],
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_05c9c7af08a254cdfd82fbfe9721277a.addTo(map_c00b207e4dc500f1fc1dca9fe6cd7024);
+        
+    
+            var marker_5e0032564ff974d0e2901a5f2ecb4e55 = L.marker(
+                [48.679835, 2.345206],
+                {
+}
+            ).addTo(map_c00b207e4dc500f1fc1dca9fe6cd7024);
+        
+    
+            var icon_4ffa00b18ffc28763b48c04388e68b55 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "parking",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_295e680787e98d082f4954da5d80c9db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a424dfd96be693d9ca73343a738b4c4e = $(`<div id="html_a424dfd96be693d9ca73343a738b4c4e" style="width: 100.0%; height: 100.0%;">On part d'ici</div>`)[0];
+                popup_295e680787e98d082f4954da5d80c9db.setContent(html_a424dfd96be693d9ca73343a738b4c4e);
+            
+        
+
+        marker_5e0032564ff974d0e2901a5f2ecb4e55.bindPopup(popup_295e680787e98d082f4954da5d80c9db)
+        ;
+
+        
+    
+    
+            marker_5e0032564ff974d0e2901a5f2ecb4e55.bindTooltip(
+                `<div>
+                     Parking de la mairie de Savigny-sur-Orge
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5e0032564ff974d0e2901a5f2ecb4e55.setIcon(icon_4ffa00b18ffc28763b48c04388e68b55);
+            
+    
+            var layer_control_c4b10c3353d8b8ea1b60b5a0f5e41937_layers = {
+                base_layers : {
+                    "Topographique" : tile_layer_6425a10d8e154a3772232ecbec185532,
+                    "Routier Esri" : tile_layer_26d944a3fa21bf3f86fdae962b7d9674,
+                    "Esri World Imagery (Satellite)" : tile_layer_240d5693ab032ccef0a4cdf7bad1d2ad,
+                    "OpenStreetMap France" : tile_layer_05c9c7af08a254cdfd82fbfe9721277a,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_c4b10c3353d8b8ea1b60b5a0f5e41937 = L.control.layers(
+                layer_control_c4b10c3353d8b8ea1b60b5a0f5e41937_layers.base_layers,
+                layer_control_c4b10c3353d8b8ea1b60b5a0f5e41937_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_c00b207e4dc500f1fc1dca9fe6cd7024);
+
+        
+</script>
+</html>
