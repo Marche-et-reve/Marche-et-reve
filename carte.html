@@ -36,5 +36,44 @@
     </div> <div class="footer">
         <h2><b> 09/11/2026 </b></h2>
     </div>
+    <script>
+async function afficherDernierCommit() {
+
+    const proprietaire = "fruits-des-bois";
+    const depot = "Tableau";
+    const branche = "Bis";
+
+    const url = `https://api.github.com/repos/${proprietaire}/${depot}/commits?sha=${branche}&per_page=1`;
+
+    try {
+        const reponse = await fetch(url);
+        if (!reponse.ok) throw new Error("Erreur API GitHub");
+
+        const commits = await reponse.json();
+
+        const date = new Date(commits[0].commit.committer.date);
+
+        const dateFormatee = date.toLocaleString("fr-FR", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+
+        document.getElementById("last-update").innerHTML =
+            "Dernière mise à jour : " + dateFormatee;
+
+    } catch (erreur) {
+        document.getElementById("last-update").textContent =
+            "Date de mise à jour indisponible";
+    }
+}
+
+afficherDernierCommit();
+</script>
+    <div id="last-update">
+    Dernière mise à jour : chargement...
+</div>
 </body>
 </html>
