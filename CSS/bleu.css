@@ -49,6 +49,8 @@ title {
 .imglettre {
 	width: 50px;
 	height: 50px;
+	border: 5px #1BA3EC solid;
+	border-radius: 15px;
 }
 
 .carte-item ul {
@@ -131,27 +133,4 @@ body {
     float: none;
     width: 100%;
   }
-}
-
-img {
-	display: inline-flex;
-	border: 5px #1BA3EC solid;
-	border-radius: 15px;
-}
-.image{
-	max-width : 60%;
-	max-height: 30%;
-}
-
-
-img:hover {
-	display: flex;
-}
-
-.piza {
-	padding-left: 50px;
-	color: navy;
-	font-style: "bold";
-	font-family: "Arial";
-	font-size: 14px;
 }
