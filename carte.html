@@ -33,9 +33,7 @@
         <ol> 26/11 : Balade autour du port aux cerises, environ 9 km. </ol>
     </ul></p></center>
 
-    </div> <div class="footer">
-        <h2><b> 09/11/2026 </b></h2>
-    </div>
+    </div> 
     <script>
 async function afficherDernierCommit() {
 
@@ -61,18 +59,18 @@ async function afficherDernierCommit() {
             minute: "2-digit"
         });
 
-        document.getElementById("last-update").innerHTML =
+        document.getElementById("footer").innerHTML =
             "Dernière mise à jour : " + dateFormatee;
 
     } catch (erreur) {
-        document.getElementById("last-update").textContent =
+        document.getElementByClass("footer").textContent =
             "Date de mise à jour indisponible";
     }
 }
 
 afficherDernierCommit();
 </script>
-    <div id="last-update">
+    <div class="footer">
     Dernière mise à jour : chargement...
 </div>
 </body>
