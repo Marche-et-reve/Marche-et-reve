@@ -81,11 +81,15 @@ li, a, ol, ul, p {
 }
 
 .footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
 	text-align: center;
 	font-family: "Arial";
 	color: black;
 	font-size: 14;
 	font-style: "bold";
+	background-color: #56A4CC;
 }
 
 body {
@@ -124,16 +128,4 @@ body {
     float: none;
     width: 100%;
   }
-}
-
-#last-update {
-    text-align: center;
-    padding: 10px;
-    margin-top: 15px;
-	text-align: center;
-	font-family: "Arial";
-	color: black;
-	font-size: 14;
-	font-style: "bold";
-	background-color: #56A4CC;
 }
