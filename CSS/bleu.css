@@ -4,8 +4,6 @@ title {
 
 /* Alignement horizontal de toutes les cartes */
 .container-images {
-    display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     justify-content: flex-start; /* ou center */
     flex-direction: column; /* Aligne l'image et le texte verticalement */
@@ -13,14 +11,6 @@ title {
     text-align: center;     /* Sécurité pour le texte */
 }
 
-/* Style pour chaque bloc individuel (Lien + Image + Description facultative) */
-.carte-item {
-    width: 250px;           /* Largeur fixe pour que toutes les cartes aient la même taille */
-	display: flex;
-    flex-direction: column;
-}
-
-/* Enlever le soulignement de tous les liens à l'intérieur de nos blocs */
 .carte-item a {
     text-decoration: none;
     font-weight: bold;
@@ -128,6 +118,7 @@ body {
   color:midnightblue;
   font-weight: bold;
 }
+
 @media screen and (max-width: 1000px) {
   .topnav a {
     float: none;
