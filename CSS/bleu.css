@@ -92,6 +92,18 @@ li, a, ol, ul, p {
 	background-color: #56A4CC;
 }
 
+#last-update {
+    text-align: center;
+    padding: 10px;
+    margin-top: 15px;
+	text-align: center;
+	font-family: "Arial";
+	color: black;
+	font-size: 14;
+	font-style: "bold";
+	background-color: #56A4CC;
+}
+
 body {
 	background-color: #70E691;
 }
