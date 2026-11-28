@@ -47,7 +47,7 @@ async function afficherDernierCommit() {
 
     const url = `https://api.github.com/repos/${proprietaire}/${depot}/commits?sha=${branche}&per_page=1`;
 
-    const element = document.getElementById("last-update");
+    const element = document.getElementsByClassName("footer");
 
     try {
 
