@@ -34,9 +34,9 @@
     </ul></p></center>
 
     </div> 
-<div class="footer">
+<footer class="footer">
     En cours de chargement...
-</div>
+</footer>
 
 <script>
 async function afficherDernierCommit() {
@@ -45,9 +45,14 @@ async function afficherDernierCommit() {
     const depot = "Marche-et-reve";
     const branche = "main";
 
-    const url = `https://api.github.com/repos/${proprietaire}/${depot}/commits?sha=${branche}&per_page=1`;
-
     const element = document.querySelector(".footer");
+
+    if (!element) {
+        console.error("Élément .footer introuvable");
+        return;
+    }
+
+    const url = `https://api.github.com/repos/${proprietaire}/${depot}/commits?sha=${branche}&per_page=1`;
 
     try {
 
@@ -59,13 +64,11 @@ async function afficherDernierCommit() {
 
         const commits = await reponse.json();
 
-        if (!commits || commits.length === 0) {
+        if (!commits.length) {
             throw new Error("Aucun commit trouvé");
         }
 
-        const dateCommit = commits[0].commit.author.date;
-
-        const date = new Date(dateCommit);
+        const date = new Date(commits[0].commit.committer.date);
 
         const dateFormatee = date.toLocaleString("fr-FR", {
             day: "2-digit",
@@ -75,18 +78,19 @@ async function afficherDernierCommit() {
             minute: "2-digit"
         });
 
-        element.textContent = "Dernière mise à jour : " + dateFormatee;
+        element.textContent =
+            "Dernière mise à jour : " + dateFormatee;
 
     } catch (erreur) {
 
         console.error("Erreur GitHub :", erreur);
 
-        element.textContent = "Dernière mise à jour indisponible (" + erreur.message + ")";
+        element.textContent =
+            "Date de mise à jour indisponible";
     }
 }
 
 afficherDernierCommit();
 </script>
-
 </body>
 </html>
